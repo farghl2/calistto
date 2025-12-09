@@ -1,0 +1,35 @@
+{
+    
+    "common": {
+        "loading": "Loading...",
+        "error": "Error",
+        "retry": "Retry",
+        "search": "Search",
+        "submit": "Submit",
+        "cancel": "Cancel",
+        "save": "Save",
+        "edit": "Edit",
+        "delete": "Delete",
+        "back": "Back",
+        "next": "Next",
+        "previous": "Previous"
+    },
+    "navigation": {
+        "home": "Home",
+        "projects": "Projects",
+        "units": "Units",
+        "developers": "Developers",
+        "contact": "Contact",
+        "sell_property": "Sell Property"
+    },
+    "home": {
+        "title": "Done",
+        "subtitle": "Find Your Perfect Property",
+        "search_placeholder": "Search for properties, projects, or locations...",
+        "featured_projects": "Featured Projects",
+        "featured_zones": "Featured Zones",
+        "featured_developers": "Featured Developers",
+        "ai_assistant": "AI Assistant",
+        "ai_description": "Get personalized recommendations and guidance"
+    }
+}
