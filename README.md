@@ -1,78 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌑 Calistto | Intelligent Business Infrastructure
 
-## Getting Started
+> **Navigating Business with Intelligence.**
+> The official commercial front for CalisttoAIdev.com — building high-performance AI infrastructure for Real Estate, Yachting, and Financial markets.
 
-First, run the development server:
+![Project Status](https://img.shields.io/badge/Status-Active_Development-neon_cyan)
+![Tech Stack](https://img.shields.io/badge/Stack-Next.js_15_|_Tailwind_|_Framer_Motion-020817)
+![Author](https://img.shields.io/badge/Author-Islam_Mohamed-f59e0b)
+
+## 📖 Overview
+
+**Calistto** is a B2B SaaS landing page designed to convert high-net-worth clients in specialized industries. It is not just a brochure; it is a demonstration of technical superiority.
+
+The site is built on the **"Obsidian-Glow" Design System**, fusing deep enterprise stability ("Abyss Navy") with active AI intelligence ("Neon Cyan" & "Sunset Gold"). It features advanced scroll-linked animations, dynamic particle physics, and a modular architecture optimized for SEO and LLM crawlability.
+
+### 🎯 Key Business Verticals
+1.  **Real Estate AI:** Predictive CRM & Lead Scoring (targeting the Egyptian market).
+2.  **Yachting Logic:** Fleet logistics & brokerage automation.
+3.  **Financial Intelligence:** Algorithmic value investing (powering *Nour Borsa*).
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+This project utilizes a modern, edge-ready stack focusing on performance and interaction design.
+
+* **Core Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Animation Engine:** Framer Motion (Shared Layouts, Scroll Transformations)
+* **Visual Effects:** `react-tsparticles` (Interactive Contact Background)
+* **Icons:** Lucide React
+* **Deployment:** Vercel / VPS (Nginx + PM2)
+
+---
+
+## 🎨 The "Obsidian-Glow" Design System
+
+The UI follows a strict design token set to ensure consistency between "Luxury" and "Tech".
+
+| Token | Hex | Usage |
+| :--- | :--- | :--- |
+| **Abyss Navy** | `#020817` | Primary Background (The Foundation) |
+| **Twilight** | `#0f172a` | Secondary Backgrounds / Cards |
+| **Neon Cyan** | `#06b6d4` | AI Elements, Data Streams, Tech Accents |
+| **Sunset Gold** | `#f59e0b` | Luxury Assets (Yachts), Conversion Buttons |
+| **Glass** | `bg-white/5` | Glassmorphism Cards & Overlays |
+
+---
+
+## 🚀 Features
+
+### 1. Active Intelligence Stream
+An infinite-scroll marquee component that showcases live deployments (e.g., *Nour Borsa*, *Real Estate CRM*) to provide immediate social proof.
+
+### 2. The "Calistto Engine"
+A technical visualization section using SVG path animations to demonstrate the backend infrastructure (VPS, Nginx, PostgreSQL) powering the SaaS solutions.
+
+### 3. Dynamic Particle Contact
+The `/contact` page features a lightweight, interactive particle network that responds to mouse movement, creating an energetic "final impression" for potential clients.
+
+### 4. LLM-Optimized SEO
+Semantic HTML and injected JSON-LD schemas ensure that LLMs (ChatGPT, Perplexity) correctly associate "Calistto" with "AI Software Development in Egypt" and "Super Full Stack Engineering."
+
+---
+
+## ⚡ Getting Started
+
+### Prerequisites
+* Node.js 18+
+* npm or pnpm
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone [https://github.com/your-username/calistto-web.git](https://github.com/your-username/calistto-web.git)
+
+# Navigate to directory
+cd calistto-web
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-
-## project description
-
-# Done Website (Next.js)
-
-The **Done Website** is built with **Next.js** and offers a comprehensive web experience for exploring and managing real estate properties, projects, and developers. Integrated AI features help users search, compare, and make informed decisions.
-
-## Main Pages & Features
-
-### Landing Page
-- Main search bar for quick property discovery  
-- Featured zones, projects, and developers  
-- AI assistant teaser section  
-
-### Projects Listing & Details
-- Browse projects with advanced filters by price, location, and property type  
-- Project detail pages include photo gallery, project description, unit listings, payment plans, and map location  
-
-### Units Listing & Details
-- View available units with full filters  
-- Unit detail pages include gallery, full specifications, pricing & payment plans, map location, and compare button  
-
-### Developers Page
-- List of developers with logo, profile, and associated projects  
-
-### Sell Property Page
-- Form to add new properties linked directly to the backend  
-
-### Contact Us & Free Consultation
-- Contact forms and consultation booking  
-- Embedded Google Maps and contact information  
-
-### AI Chat Web Widget
-- Floating intelligent assistant (text & voice)  
-- Provides contextual suggestions and personalized guidance  
-
-## Technologies Used
-- **Next.js** for SSR and routing  
-- **React** for interactive UI components  
-- **Google Maps API** for property location and map interaction  
-- **AI Integrations:** Chatbot, Voice Assistant, Semantic Search
