@@ -1,10 +1,11 @@
 "use client";
 
-import { Link } from '@/src/i18n/routing';
+import { Link as I18nLink } from '@/src/i18n/routing';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import LanguageToggle from './LanguageToggle';
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -42,7 +43,7 @@ export default function Navbar() {
       >
         
         {/* Premium Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <I18nLink href="/" className="flex items-center gap-3 group">
           {/* Logo Icon Container */}
           <motion.div 
             className="relative"
@@ -73,7 +74,7 @@ export default function Navbar() {
               />
             </div>
           </motion.div>
-
+          
           {/* Logo Text */}
           <motion.div 
             className="flex flex-col"
@@ -98,12 +99,12 @@ export default function Navbar() {
               software solutions
             </span>
           </motion.div>
-        </Link>
+        </I18nLink>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
-            <Link
+            <I18nLink
               key={item.name}
               href={item.href}
               className="relative px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors group"
@@ -112,12 +113,13 @@ export default function Navbar() {
               {/* Hover Glow Effect */}
               <span className="absolute inset-0 bg-white/5 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Link>
+            </I18nLink>
           ))}
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button & Language Toggle */}
         <div className="hidden md:flex items-center gap-4">
+           <LanguageToggle />
            <button className="group relative px-6 py-2.5 bg-cyan-500 text-black font-bold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]">
              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-100 group-hover:opacity-90 transition-opacity" />
              <div className="relative flex items-center gap-2 text-sm uppercase tracking-wide">
@@ -127,13 +129,16 @@ export default function Navbar() {
            </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Menu Toggle & Lang Toggle */}
+        <div className="md:hidden flex items-center gap-3">
+          <LanguageToggle className="scale-90" />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -149,7 +154,7 @@ export default function Navbar() {
           <div className="absolute bottom-0 left-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
 
           {navItems.map((item) => (
-            <Link
+            <I18nLink
               key={item.name}
               href={item.href}
               onClick={() => setIsOpen(false)}
@@ -157,7 +162,7 @@ export default function Navbar() {
             >
               <span className="text-lg font-medium text-gray-200 group-hover:text-white">{item.name}</span>
               <ArrowRight size={18} className="text-cyan-500/50 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
-            </Link>
+            </I18nLink>
           ))}
           <div className="h-px bg-white/10 my-2" />
           <button className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-bold rounded-xl mt-2 hover:shadow-lg transition-all uppercase tracking-wider">

@@ -1,5 +1,4 @@
 {
-    
     "common": {
         "loading": "Loading...",
         "error": "Error",
@@ -12,24 +11,85 @@
         "delete": "Delete",
         "back": "Back",
         "next": "Next",
-        "previous": "Previous"
+        "previous": "Previous",
+        "all_rights_reserved": "All rights reserved",
+        "privacy_policy": "Privacy Policy",
+        "terms_of_service": "Terms of Service",
+        "cookies": "Cookies"
     },
     "navigation": {
         "home": "Home",
-        "projects": "Projects",
-        "units": "Units",
-        "developers": "Developers",
-        "contact": "Contact",
-        "sell_property": "Sell Property"
+        "engine": "Calistto Engine",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "process": "Process",
+        "lets_talk": "Let's Talk",
+        "contact": "Contact"
     },
-    "home": {
-        "title": "Done",
-        "subtitle": "Find Your Perfect Property",
-        "search_placeholder": "Search for properties, projects, or locations...",
-        "featured_projects": "Featured Projects",
-        "featured_zones": "Featured Zones",
-        "featured_developers": "Featured Developers",
-        "ai_assistant": "AI Assistant",
-        "ai_description": "Get personalized recommendations and guidance"
+    "hero": {
+        "title_prefix": "INTELLIGENT",
+        "title_highlight": "BUSINESS",
+        "title_suffix": "INFRASTRUCTURE",
+        "subtitle": "We engineer AI-powered software ecosystems for Real Estate, Yachting, and Financial sectors. Scalable, secure, and future-proof.",
+        "start_project": "Start Your Project",
+        "view_work": "View Our Work",
+        "scroll": "Scroll"
+    },
+    "why_us": {
+        "title": "WHY CHOOSE US",
+        "subtitle": "We don’t just build software. We build intelligent assets.",
+        "cards": {
+            "ai_integration": {
+                "title": "Deep AI Integration",
+                "desc": "Beyond basic chatbots. We build neural networks that predict trends and automate complex decisions."
+            },
+            "scalable": {
+                "title": "Scalable Architecture",
+                "desc": "Systems built to handle millions of requests without breaking a sweat. Future-proof codebases."
+            },
+            "global": {
+                "title": "Global Standards",
+                "desc": "Compliance with GDPR, HIPAA, and international security protocols from day one."
+            },
+            "security": {
+                "title": "Bank-Grade Security",
+                "desc": "End-to-end encryption and advanced threat protection for your most sensitive data."
+            }
+        },
+        "cta": "Get Free Consultation"
+    },
+    "services": {
+        "title": "OUR SERVICES",
+        "subtitle": "Comprehensive digital solutions for modern enterprises.",
+        "cards": {
+            "ai_solutions": {
+                "title": "AI Solutions",
+                "desc": "Custom machine learning models and intelligent automation."
+            },
+            "web_dev": {
+                "title": "Web Development",
+                "desc": "High-performance web applications and platforms."
+            },
+            "mobile_apps": {
+                "title": "Mobile Apps",
+                "desc": "Native and cross-platform mobile experiences."
+            },
+            "blockchain": {
+                "title": "Blockchain",
+                "desc": "Secure decentralized applications and smart contracts."
+            }
+        },
+        "cta": "Ask an Engineer"
+    },
+    "footer": {
+        "ready_title": "Ready to Build the",
+        "future": "Future?",
+        "cta_desc": "Let's transform your ideas into intelligent, scalable software solutions.",
+        "chat_whatsapp": "Chat on WhatsApp",
+        "company": "Company",
+        "services": "Services",
+        "contact": "Contact",
+        "remote_first": "Remote First Company",
+        "worldwide": "Worldwide"
     }
 }
