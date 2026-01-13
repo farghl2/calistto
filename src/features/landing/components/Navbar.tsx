@@ -3,21 +3,28 @@
 import { Link as I18nLink } from '@/src/i18n/routing';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import LanguageToggle from './LanguageToggle';
 
-const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Calistto Engine', href: '#tech' },
-  { name: 'Services', href: '#services' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Process', href: '#process' },
-];
+
+
+import { CTA_LINK } from '@/src/shared/constans/data';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function Navbar() {
+  const t = useTranslations('navigation');
+
+  const navItems = [
+    { name: t('home'), href: '/' },
+    { name: t('services'), href: '/#services' },
+    { name: t('portfolio'), href: '/#portfolio' },
+    { name: t('process'), href: '/#process' },
+    { name: t('engine'), href: '/#tech' },
+  ];
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const local =useLocale();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -120,13 +127,18 @@ export default function Navbar() {
         {/* CTA Button & Language Toggle */}
         <div className="hidden md:flex items-center gap-4">
            <LanguageToggle />
-           <button className="group relative px-6 py-2.5 bg-cyan-500 text-black font-bold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]">
-             <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-100 group-hover:opacity-90 transition-opacity" />
+           <a 
+             href={CTA_LINK}
+             target="_blank"
+             rel="noopener noreferrer"
+             className="group relative px-6 py-2.5 bg-cyan-500 text-black font-bold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] block"
+           >
+             <div className="absolute inset-0 bg-linear-to-r from-cyan-400 to-blue-400 opacity-100 group-hover:opacity-90 transition-opacity" />
              <div className="relative flex items-center gap-2 text-sm uppercase tracking-wide">
-               Let's Talk
-               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+               {t('lets_talk')}
+               {local === 'en' ? <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" /> : <ArrowLeft size={16} className="group-hover:translate-x-1 transition-transform" />}
              </div>
-           </button>
+           </a>
         </div>
 
         {/* Mobile Menu Toggle & Lang Toggle */}
@@ -165,9 +177,14 @@ export default function Navbar() {
             </I18nLink>
           ))}
           <div className="h-px bg-white/10 my-2" />
-          <button className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-black font-bold rounded-xl mt-2 hover:shadow-lg transition-all uppercase tracking-wider">
-             Let's Talk
-          </button>
+          <a 
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-4 bg-linear-to-r from-cyan-500 to-blue-500 text-black font-bold rounded-xl mt-2 hover:shadow-lg transition-all uppercase tracking-wider block text-center"
+          >
+             {t('lets_talk')}
+          </a>
         </motion.div>
       )}
     </motion.nav>

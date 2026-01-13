@@ -24,6 +24,18 @@ export default function ChatSheet() {
     }
   }, [messages, isLoading]);
 
+  // Lock body scroll when chat is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -49,7 +61,7 @@ export default function ChatSheet() {
             <ChatHeader />
 
             {/* Messages Area */}
-            <div className="flex-1 overflow-y-auto py-4 pb-6 space-y-4 scrollbar-thin scrollbar-thumb-cyan-500/20 scrollbar-track-transparent">
+            <div className="flex-1 overflow-y-auto overscroll-contain py-4 pb-6 space-y-4 scrollbar-thin scrollbar-thumb-cyan-500/20 scrollbar-track-transparent">
               {/* Messages */}
               {messages.map((message) => (
                 <ChatMessage key={message.id} message={message} />

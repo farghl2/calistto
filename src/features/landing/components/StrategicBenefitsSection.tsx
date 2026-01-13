@@ -1,98 +1,101 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 
-const benefits = [
-  {
-    title: 'EFFICIENCY',
-    description: 'Automate 70% of manual operations.',
-    color: 'amber',
-    // Custom SVG for Gear + Clock + Arrow
-    icon: (
-      <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
-        {/* Main Gear */}
-        <g className="text-amber-400" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M50 20 L53 28 L60 25 L58 33 L66 35 L60 40 L65 47 L57 47 L57 55 L50 50 L43 55 L43 47 L35 47 L40 40 L34 35 L42 33 L40 25 L47 28 L50 20Z" />
-          <circle cx="50" cy="40" r="8" />
-        </g>
-        {/* Clock Circle */}
-        <g className="text-amber-400">
-          <circle cx="70" cy="70" r="18" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <line x1="70" y1="70" x2="70" y2="58" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <line x1="70" y1="70" x2="80" y2="70" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="70" cy="70" r="2" fill="currentColor"/>
-        </g>
-        {/* Circular Arrow */}
-        <g className="text-cyan-400">
-          <path d="M25 55 A25 25 0 1 1 55 25" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <polygon points="55,15 55,35 65,25" fill="currentColor"/>
-        </g>
-      </svg>
-    ),
-  },
-  {
-    title: 'PRECISION',
-    description: 'AI-backed decision-making for high-value assets.',
-    color: 'purple',
-    // Custom SVG for Target + Brain
-    icon: (
-      <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
-        {/* Outer Target Ring */}
-        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#purpleGradient)" strokeWidth="2"/>
-        {/* Middle Ring */}
-        <circle cx="50" cy="50" r="32" fill="none" stroke="url(#purpleGradient)" strokeWidth="1.5"/>
-        {/* Inner Ring */}
-        <circle cx="50" cy="50" r="20" fill="none" stroke="url(#purpleGradient)" strokeWidth="1"/>
-        {/* Crosshairs */}
-        <line x1="50" y1="5" x2="50" y2="25" stroke="#A855F7" strokeWidth="2"/>
-        <line x1="50" y1="75" x2="50" y2="95" stroke="#A855F7" strokeWidth="2"/>
-        <line x1="5" y1="50" x2="25" y2="50" stroke="#A855F7" strokeWidth="2"/>
-        <line x1="75" y1="50" x2="95" y2="50" stroke="#A855F7" strokeWidth="2"/>
-        {/* Brain Icon */}
-        <g className="text-cyan-400" transform="translate(35, 35) scale(0.6)">
-          <path d="M50 15 C35 15 25 25 25 40 C25 50 30 55 35 58 L35 70 L45 70 L45 60 C47 61 50 61 50 61 C50 61 53 61 55 60 L55 70 L65 70 L65 58 C70 55 75 50 75 40 C75 25 65 15 50 15Z" 
-                fill="none" stroke="currentColor" strokeWidth="3"/>
-          <path d="M40 30 Q50 25 60 30" fill="none" stroke="currentColor" strokeWidth="2"/>
-          <path d="M35 40 Q50 45 65 40" fill="none" stroke="currentColor" strokeWidth="2"/>
-        </g>
-        <defs>
-          <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#A855F7"/>
-            <stop offset="100%" stopColor="#C084FC"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
-  {
-    title: 'SCALE',
-    description: 'Infrastructure built to handle global demand.',
-    color: 'cyan',
-    // Custom SVG for Globe + Arrow
-    icon: (
-      <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
-        {/* Globe */}
-        <g className="text-cyan-400" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="45" cy="55" r="35"/>
-          {/* Latitude lines */}
-          <ellipse cx="45" cy="55" rx="35" ry="12"/>
-          <ellipse cx="45" cy="55" rx="35" ry="25"/>
-          {/* Longitude line */}
-          <ellipse cx="45" cy="55" rx="12" ry="35"/>
-        </g>
-        {/* Trending Arrow */}
-        <g className="text-amber-400">
-          <path d="M55 45 L75 20" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
-          <polygon points="80,10 70,15 75,25" fill="currentColor"/>
-          {/* Arrow base bars */}
-          <line x1="50" y1="55" x2="55" y2="45" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-        </g>
-      </svg>
-    ),
-  },
-];
-
 export default function StrategicBenefitsSection() {
+  const t = useTranslations('strategic_benefits');
+
+  const benefits = [
+    {
+      title: t('cards.efficiency.title'),
+      description: t('cards.efficiency.desc'),
+      color: 'amber',
+      // Custom SVG for Gear + Clock + Arrow
+      icon: (
+        <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
+          {/* Main Gear */}
+          <g className="text-amber-400" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M50 20 L53 28 L60 25 L58 33 L66 35 L60 40 L65 47 L57 47 L57 55 L50 50 L43 55 L43 47 L35 47 L40 40 L34 35 L42 33 L40 25 L47 28 L50 20Z" />
+            <circle cx="50" cy="40" r="8" />
+          </g>
+          {/* Clock Circle */}
+          <g className="text-amber-400">
+            <circle cx="70" cy="70" r="18" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <line x1="70" y1="70" x2="70" y2="58" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="70" y1="70" x2="80" y2="70" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="70" cy="70" r="2" fill="currentColor"/>
+          </g>
+          {/* Circular Arrow */}
+          <g className="text-cyan-400">
+            <path d="M25 55 A25 25 0 1 1 55 25" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <polygon points="55,15 55,35 65,25" fill="currentColor"/>
+          </g>
+        </svg>
+      ),
+    },
+    {
+      title: t('cards.precision.title'),
+      description: t('cards.precision.desc'),
+      color: 'purple',
+      // Custom SVG for Target + Brain
+      icon: (
+        <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
+          {/* Outer Target Ring */}
+          <circle cx="50" cy="50" r="45" fill="none" stroke="url(#purpleGradient)" strokeWidth="2"/>
+          {/* Middle Ring */}
+          <circle cx="50" cy="50" r="32" fill="none" stroke="url(#purpleGradient)" strokeWidth="1.5"/>
+          {/* Inner Ring */}
+          <circle cx="50" cy="50" r="20" fill="none" stroke="url(#purpleGradient)" strokeWidth="1"/>
+          {/* Crosshairs */}
+          <line x1="50" y1="5" x2="50" y2="25" stroke="#A855F7" strokeWidth="2"/>
+          <line x1="50" y1="75" x2="50" y2="95" stroke="#A855F7" strokeWidth="2"/>
+          <line x1="5" y1="50" x2="25" y2="50" stroke="#A855F7" strokeWidth="2"/>
+          <line x1="75" y1="50" x2="95" y2="50" stroke="#A855F7" strokeWidth="2"/>
+          {/* Brain Icon */}
+          <g className="text-cyan-400" transform="translate(35, 35) scale(0.6)">
+            <path d="M50 15 C35 15 25 25 25 40 C25 50 30 55 35 58 L35 70 L45 70 L45 60 C47 61 50 61 50 61 C50 61 53 61 55 60 L55 70 L65 70 L65 58 C70 55 75 50 75 40 C75 25 65 15 50 15Z" 
+                  fill="none" stroke="currentColor" strokeWidth="3"/>
+            <path d="M40 30 Q50 25 60 30" fill="none" stroke="currentColor" strokeWidth="2"/>
+            <path d="M35 40 Q50 45 65 40" fill="none" stroke="currentColor" strokeWidth="2"/>
+          </g>
+          <defs>
+            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#A855F7"/>
+              <stop offset="100%" stopColor="#C084FC"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      ),
+    },
+    {
+      title: t('cards.scale.title'),
+      description: t('cards.scale.desc'),
+      color: 'cyan',
+      // Custom SVG for Globe + Arrow
+      icon: (
+        <svg viewBox="0 0 100 100" className="w-24 h-24 md:w-32 md:h-32">
+          {/* Globe */}
+          <g className="text-cyan-400" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="45" cy="55" r="35"/>
+            {/* Latitude lines */}
+            <ellipse cx="45" cy="55" rx="35" ry="12"/>
+            <ellipse cx="45" cy="55" rx="35" ry="25"/>
+            {/* Longitude line */}
+            <ellipse cx="45" cy="55" rx="12" ry="35"/>
+          </g>
+          {/* Trending Arrow */}
+          <g className="text-amber-400">
+            <path d="M55 45 L75 20" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+            <polygon points="80,10 70,15 75,25" fill="currentColor"/>
+            {/* Arrow base bars */}
+            <line x1="50" y1="55" x2="55" y2="45" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          </g>
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <section className="relative py-20 md:py-28 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
       
@@ -142,9 +145,9 @@ export default function StrategicBenefitsSection() {
             viewport={{ once: true }}
             className="font-oswald text-4xl sm:text-5xl md:text-6xl font-bold uppercase text-white tracking-wide"
           >
-            STRATEGIC BENEFITS{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-500">
-              (THE ROI)
+            {t('title')}{' '}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-amber-500">
+              {t('subtitle')}
             </span>
           </motion.h2>
         </div>

@@ -1,62 +1,68 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import { Brain, TrendingUp, Globe, ShieldCheck, Cog } from 'lucide-react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
+import { CTA_LINK } from '@/src/shared/constans/data';
 
-const features = [
-  {
-    title: 'AI INTEGRATION',
-    description: 'We seamlessly embed deep-learning models into your systems for smarter insights.',
-    icon: Brain,
-    secondaryIcon: Cog,
-    iconColor: 'text-cyan-400',
-    iconGlow: 'drop-shadow-[0_0_20px_rgba(6,182,212,0.8)]',
-    borderColor: 'border-cyan-500/50',
-    glowColor: 'shadow-[0_0_25px_rgba(6,182,212,0.25)]',
-    hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(6,182,212,0.4)]',
-    iconBg: 'from-cyan-500/20 to-cyan-600/5',
-    accentColor: 'cyan',
-  },
-  {
-    title: 'SCALABILITY',
-    description: 'Our architectures are built to handle immense growth and high traffic.',
-    icon: TrendingUp,
-    iconColor: 'text-amber-400',
-    iconGlow: 'drop-shadow-[0_0_20px_rgba(245,158,11,0.8)]',
-    borderColor: 'border-amber-500/50',
-    glowColor: 'shadow-[0_0_25px_rgba(245,158,11,0.25)]',
-    hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(245,158,11,0.4)]',
-    iconBg: 'from-amber-500/20 to-amber-600/5',
-    accentColor: 'amber',
-  },
-  {
-    title: 'BUSINESS MINDSET',
-    description: 'We understand your industry needs, from real estate to finance.',
-    icon: Globe,
-    iconColor: 'text-cyan-400',
-    iconGlow: 'drop-shadow-[0_0_20px_rgba(6,182,212,0.8)]',
-    borderColor: 'border-cyan-500/50',
-    glowColor: 'shadow-[0_0_25px_rgba(6,182,212,0.25)]',
-    hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(6,182,212,0.4)]',
-    iconBg: 'from-cyan-500/20 to-cyan-600/5',
-    accentColor: 'cyan',
-  },
-  {
-    title: 'SPEED & SECURITY',
-    description: 'Rapid deployment with robust security protocols from day one.',
-    icon: ShieldCheck,
-    iconColor: 'text-amber-400',
-    iconGlow: 'drop-shadow-[0_0_20px_rgba(245,158,11,0.8)]',
-    borderColor: 'border-amber-500/50',
-    glowColor: 'shadow-[0_0_25px_rgba(245,158,11,0.25)]',
-    hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(245,158,11,0.4)]',
-    iconBg: 'from-amber-500/20 to-amber-600/5',
-    accentColor: 'amber',
-  }
-];
+
 
 export default function WhyUsSection() {
+  const t = useTranslations('why_us');
+
+  const features = [
+    {
+      title: t('cards.ai_integration.title'),
+      description: t('cards.ai_integration.desc'),
+      icon: Brain,
+      secondaryIcon: Cog,
+      iconColor: 'text-cyan-400',
+      iconGlow: 'drop-shadow-[0_0_20px_rgba(6,182,212,0.8)]',
+      borderColor: 'border-cyan-500/50',
+      glowColor: 'shadow-[0_0_25px_rgba(6,182,212,0.25)]',
+      hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(6,182,212,0.4)]',
+      iconBg: 'from-cyan-500/20 to-cyan-600/5',
+      accentColor: 'cyan',
+    },
+    {
+      title: t('cards.scalable.title'),
+      description: t('cards.scalable.desc'),
+      icon: TrendingUp,
+      iconColor: 'text-amber-400',
+      iconGlow: 'drop-shadow-[0_0_20px_rgba(245,158,11,0.8)]',
+      borderColor: 'border-amber-500/50',
+      glowColor: 'shadow-[0_0_25px_rgba(245,158,11,0.25)]',
+      hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(245,158,11,0.4)]',
+      iconBg: 'from-amber-500/20 to-amber-600/5',
+      accentColor: 'amber',
+    },
+    {
+      title: t('cards.global.title'), // Note: "BUSINESS MINDSET" in old, "Global Standards" in JSON? Maps to 'global' key based on order? Old 3rd was "BUSINESS MINDSET". JSON 3rd is "global".
+      description: t('cards.global.desc'),
+      icon: Globe,
+      iconColor: 'text-cyan-400',
+      iconGlow: 'drop-shadow-[0_0_20px_rgba(6,182,212,0.8)]',
+      borderColor: 'border-cyan-500/50',
+      glowColor: 'shadow-[0_0_25px_rgba(6,182,212,0.25)]',
+      hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(6,182,212,0.4)]',
+      iconBg: 'from-cyan-500/20 to-cyan-600/5',
+      accentColor: 'cyan',
+    },
+    {
+      title: t('cards.security.title'),
+      description: t('cards.security.desc'),
+      icon: ShieldCheck,
+      iconColor: 'text-amber-400',
+      iconGlow: 'drop-shadow-[0_0_20px_rgba(245,158,11,0.8)]',
+      borderColor: 'border-amber-500/50',
+      glowColor: 'shadow-[0_0_25px_rgba(245,158,11,0.25)]',
+      hoverGlow: 'group-hover:shadow-[0_0_40px_rgba(245,158,11,0.4)]',
+      iconBg: 'from-amber-500/20 to-amber-600/5',
+      accentColor: 'amber',
+    }
+  ];
+
   return (
     <section className="relative py-24 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
       
@@ -67,7 +73,7 @@ export default function WhyUsSection() {
          
          {/* Tech Grid */}
          <div 
-           className="absolute inset-0 z-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:60px_60px] opacity-30" 
+           className="absolute inset-0 z-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-size-[60px_60px] opacity-30" 
          />
          
          {/* Ambient Glows */}
@@ -91,7 +97,7 @@ export default function WhyUsSection() {
             viewport={{ once: true }}
             className="font-oswald text-5xl md:text-6xl font-bold uppercase text-white tracking-wide"
           >
-            WHY US
+            {t('title')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -100,7 +106,7 @@ export default function WhyUsSection() {
             transition={{ delay: 0.2 }}
             className="text-gray-300 text-lg md:text-xl font-light"
           >
-            Our advantages for building future-proof software.
+            {t('subtitle')}
           </motion.p>
         </div>
 
@@ -124,7 +130,7 @@ export default function WhyUsSection() {
 
                 {/* Icon Container with Neon Effect */}
                 <motion.div 
-                  className={`relative mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.iconBg} border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
+                  className={`relative mb-6 w-20 h-20 rounded-2xl bg-linear-to-br ${feature.iconBg} border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
                   whileHover={{ rotate: [0, -5, 5, 0] }}
                   transition={{ duration: 0.4 }}
                 >
@@ -182,13 +188,16 @@ export default function WhyUsSection() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <motion.button 
+          <motion.a 
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider"
+            className="px-10 py-4 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider inline-block text-center"
           >
-            Get Free Consultation
-          </motion.button>
+            {t('cta')}
+          </motion.a>
         </motion.div>
 
       </div>

@@ -1,50 +1,54 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
 import { Search, LayoutTemplate, FileCode2, Bug, Rocket } from 'lucide-react';
-
-const steps = [
-  {
-    id: 1,
-    title: 'DISCOVERY & STRATEGY',
-    description: 'We analyze your goals, define requirements, and plan the technical roadmap.',
-    icon: Search,
-    color: 'cyan'
-  },
-  {
-    id: 2,
-    title: 'DESIGN & PROTOTYPING',
-    description: 'We create intuitive UI/UX designs and interactive prototypes for your approval.',
-    icon: LayoutTemplate,
-    color: 'amber'
-  },
-  {
-    id: 3,
-    title: 'DEVELOPMENT & INTEGRATION',
-    description: 'Our engineers build the solution with clean code, integrating AI and other services.',
-    icon: FileCode2,
-    color: 'cyan'
-  },
-  {
-    id: 4,
-    title: 'TESTING & QA',
-    description: 'Rigorous testing across devices to ensure performance, security, and a bug-free experience.',
-    icon: Bug,
-    color: 'amber'
-  },
-  {
-    id: 5,
-    title: 'DEPLOYMENT & SUPPORT',
-    description: 'We launch your project and provide ongoing maintenance and scaling support.',
-    icon: Rocket,
-    color: 'cyan'
-  }
-];
+import { CTA_LINK } from '@/src/shared/constans/data';
 
 export default function OurProcessSection() {
+  const t = useTranslations('process');
+
+  const steps = [
+    {
+      id: 1,
+      title: t('steps.discovery.title'),
+      description: t('steps.discovery.desc'),
+      icon: Search,
+      color: 'cyan'
+    },
+    {
+      id: 2,
+      title: t('steps.design.title'),
+      description: t('steps.design.desc'),
+      icon: LayoutTemplate,
+      color: 'amber'
+    },
+    {
+      id: 3,
+      title: t('steps.development.title'),
+      description: t('steps.development.desc'),
+      icon: FileCode2,
+      color: 'cyan'
+    },
+    {
+      id: 4,
+      title: t('steps.testing.title'),
+      description: t('steps.testing.desc'),
+      icon: Bug,
+      color: 'amber'
+    },
+    {
+      id: 5,
+      title: t('steps.deployment.title'),
+      description: t('steps.deployment.desc'),
+      icon: Rocket,
+      color: 'cyan'
+    }
+  ];
+
   return (
-    <section className="relative py-24 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
+    <section id='process' className="relative py-24 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
        
        {/* Background Elements */}
        <div className="absolute inset-0 z-0">
@@ -62,7 +66,7 @@ export default function OurProcessSection() {
              viewport={{ once: true }}
              className="font-oswald text-5xl md:text-6xl font-bold uppercase text-white tracking-wide"
            >
-             OUR PROCESS
+             {t('title')}
            </motion.h2>
            <motion.p 
              initial={{ opacity: 0 }}
@@ -71,7 +75,7 @@ export default function OurProcessSection() {
              transition={{ delay: 0.2 }}
              className="text-gray-300 text-lg md:text-xl font-light"
            >
-             A transparent, agile journey from concept to launch.
+             {t('subtitle')}
            </motion.p>
          </div>
 
@@ -134,7 +138,7 @@ export default function OurProcessSection() {
 
          {/* Mobile Timeline (Vertical) */}
          <div className="md:hidden space-y-12 relative mb-16">
-            <div className="absolute top-0 bottom-0 left-6 w-0.5 bg-gradient-to-b from-cyan-500 via-amber-500 to-cyan-500 opacity-30" />
+            <div className="absolute top-0 bottom-0 left-6 w-0.5 bg-linear-to-b from-cyan-500 via-amber-500 to-cyan-500 opacity-30" />
             
             {steps.map((step, idx) => (
                <div key={step.id} className="flex gap-6 relative">
@@ -160,9 +164,14 @@ export default function OurProcessSection() {
            viewport={{ once: true }}
            className="flex justify-center"
          >
-           <button className="px-10 py-4 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] hover:scale-105 transition-all uppercase tracking-wider">
-             Start Your Journey
-           </button>
+           <a 
+             href={CTA_LINK}
+             target="_blank"
+             rel="noopener noreferrer"
+             className="px-10 py-4 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] hover:scale-105 transition-all uppercase tracking-wider inline-block text-center"
+           >
+             {t('cta')}
+           </a>
          </motion.div>
 
        </div>

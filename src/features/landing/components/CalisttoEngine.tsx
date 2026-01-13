@@ -1,30 +1,12 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { Database, ShieldCheck, Cpu, ArrowUpRight, Lock, Settings } from 'lucide-react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
 
-const features = [
-  {
-    title: 'SCALABILITY',
-    icon: Database,
-    desc: 'High-performance AI infrastructure that grows with your business, handling massive datasets.',
-    color: 'cyan'
-  },
-  {
-    title: 'SECURITY',
-    icon: Lock,
-    desc: 'Enterprise-grade data protection, encryption, and compliance for mission-critical assets.',
-    color: 'amber'
-  },
-  {
-    title: 'SEAMLESS INTEGRATION',
-    icon: Settings,
-    desc: 'Effortless deployment into existing workflows and platforms via robust APIs.',
-    color: 'purple'
-  }
-];
+
 
 // Network connection nodes
 const networkNodes = [
@@ -57,6 +39,29 @@ const connectionLines = [
 ];
 
 export default function CalisttoEngine() {
+  const t = useTranslations('calistto_engine');
+
+  const features = [
+    {
+      title: t('features.scalability.title'),
+      icon: Database,
+      desc: t('features.scalability.desc'),
+      color: 'cyan'
+    },
+    {
+      title: t('features.security.title'),
+      icon: Lock,
+      desc: t('features.security.desc'),
+      color: 'amber'
+    },
+    {
+      title: t('features.integration.title'),
+      icon: Settings,
+      desc: t('features.integration.desc'),
+      color: 'purple'
+    }
+  ];
+
   return (
     <section className="relative py-24 md:py-32 bg-navy-950 overflow-hidden" id="tech">
       {/* Circuit Board Background Pattern */}
@@ -93,11 +98,11 @@ export default function CalisttoEngine() {
             >
               <h2 className="font-oswald text-5xl md:text-6xl lg:text-7xl font-bold uppercase leading-[1.1]">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-cyan-300 to-teal-400 drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]">
-                  THE CALISTTO
+                  {t('title_prefix')}
                 </span>
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-teal-400 to-cyan-500 drop-shadow-[0_0_30px_rgba(6,182,212,0.5)]">
-                  ENGINE
+                  {t('title_suffix')}
                 </span>
               </h2>
             </motion.div>
@@ -238,8 +243,8 @@ export default function CalisttoEngine() {
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               className="absolute top-[15%] right-[5%] glass-panel px-3 py-2 rounded-lg border-l-2 border-l-cyan-400 z-30"
             >
-              <span className="text-[9px] text-gray-400 uppercase block">Neural Processing</span>
-              <span className="text-xs font-bold text-cyan-400">Active</span>
+              <span className="text-[9px] text-gray-400 uppercase block">{t('badges.neural_processing')}</span>
+              <span className="text-xs font-bold text-cyan-400">{t('badges.active')}</span>
             </motion.div>
 
             <motion.div
@@ -247,7 +252,7 @@ export default function CalisttoEngine() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               className="absolute bottom-[20%] left-[5%] glass-panel px-3 py-2 rounded-lg border-l-2 border-l-amber-400 z-30"
             >
-              <span className="text-[9px] text-gray-400 uppercase block">Data Throughput</span>
+              <span className="text-[9px] text-gray-400 uppercase block">{t('badges.data_throughput')}</span>
               <span className="text-xs font-bold text-amber-400">2.4 TB/s</span>
             </motion.div>
 
@@ -256,7 +261,7 @@ export default function CalisttoEngine() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
               className="absolute bottom-[35%] right-[0%] glass-panel px-3 py-2 rounded-lg border-l-2 border-l-purple-400 z-30"
             >
-              <span className="text-[9px] text-gray-400 uppercase block">API Latency</span>
+              <span className="text-[9px] text-gray-400 uppercase block">{t('badges.api_latency')}</span>
               <span className="text-xs font-bold text-purple-400">&lt;12ms</span>
             </motion.div>
           </motion.div>

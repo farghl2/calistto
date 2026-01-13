@@ -58,6 +58,167 @@
         },
         "cta": "Get Free Consultation"
     },
+    "calistto_engine": {
+        "title_prefix": "THE CALISTTO",
+        "title_suffix": "ENGINE",
+        "features": {
+            "scalability": {
+                "title": "SCALABILITY",
+                "desc": "High-performance AI infrastructure that grows with your business, handling massive datasets."
+            },
+            "security": {
+                "title": "SECURITY",
+                "desc": "Enterprise-grade data protection, encryption, and compliance for mission-critical assets."
+            },
+            "integration": {
+                "title": "SEAMLESS INTEGRATION",
+                "desc": "Effortless deployment into existing workflows and platforms via robust APIs."
+            }
+        },
+        "badges": {
+            "neural_processing": "Neural Processing",
+            "active": "Active",
+            "data_throughput": "Data Throughput",
+            "api_latency": "API Latency"
+        }
+    },
+    "contact": {
+        "title": "GET IN TOUCH",
+        "subtitle": "Let's build the future of your industry together. Reach out for a demo or consultation.",
+        "form": {
+            "name": "Name",
+            "name_placeholder": "Enter your name",
+            "email": "Email Address",
+            "email_placeholder": "Enter your email",
+            "company": "Company",
+            "company_placeholder": "Your company name",
+            "industry": "Select Industry",
+            "options": {
+                "real_estate": "Real Estate",
+                "yachts": "Yachts",
+                "finance": "Finance",
+                "other": "Other"
+            },
+            "message": "Message",
+            "message_placeholder": "How can we help you?",
+            "send": "SEND MESSAGE"
+        },
+        "info": {
+            "global_hq": "Global HQ",
+            "email": "Email",
+            "phone": "Phone"
+        }
+    },
+    "industry_specific": {
+        "title": "INDUSTRY-SPECIFIC AI INTELLIGENCE",
+        "subtitle": "Deep-learning models trained for the unique demands of elite sectors",
+        "cards": {
+            "real_estate": {
+                "title": "REAL ESTATE",
+                "desc": "AI-driven CRM and market prediction for high-value property assets"
+            },
+            "yachts": {
+                "title": "YACHTS",
+                "desc": "Intelligent fleet management and brokerage automation."
+            },
+            "stocks": {
+                "title": "STOCKS",
+                "desc": "Algorithmic analysis and value investing tools"
+            },
+            "ecommerce": {
+                "title": "E-COMMERCE & RESTAURANTS",
+                "desc": "Predictive supply chain and customer behavior AI"
+            }
+        }
+    },
+    "portfolio": {
+        "title": "OUR PORTFOLIO",
+        "subtitle": "Showcasing our most impactful and innovative client projects.",
+        "view_case_study": "View Case Study",
+        "view_all": "View All Projects",
+        "projects": {
+            "real_estate": {
+                "title": "AI-POWERED REAL",
+                "highlight": "ESTATE CRM",
+                "desc": "Developed a predictive analytics platform for high-value property assets, increasing sales velocity by 35%. Features market trend forecasting and intelligent lead scoring.",
+                "stats": {
+                    "sales": "Sales Increase",
+                    "conversion": "Lead Conversion",
+                    "time": "Time Saved"
+                }
+            },
+            "supply_chain": {
+                "title": "BLOCKCHAIN SUPPLY",
+                "highlight": "CHAIN TRACKER",
+                "desc": "Built a decentralized application for real-time transparency and security in global logistics, reducing counterfeiting and delays.",
+                "stats": {
+                    "cost": "Cost Reduction",
+                    "transparency": "Transparency",
+                    "partners": "Partners"
+                }
+            },
+            "yacht": {
+                "title": "LUXURY YACHT",
+                "highlight": "BOOKING PLATFORM",
+                "desc": "Premium yacht charter platform with real-time availability, crew management, and seamless payment integration for high-net-worth clients.",
+                "stats": {
+                    "bookings": "Bookings",
+                    "revenue": "Revenue",
+                    "rating": "User Rating"
+                }
+            }
+        }
+    },
+    "process": {
+        "title": "OUR PROCESS",
+        "subtitle": "A transparent, agile journey from concept to launch.",
+        "cta": "Start Your Journey",
+        "steps": {
+            "discovery": {
+                "title": "DISCOVERY & STRATEGY",
+                "desc": "We analyze your goals, define requirements, and plan the technical roadmap."
+            },
+            "design": {
+                "title": "DESIGN & PROTOTYPING",
+                "desc": "We create intuitive UI/UX designs and interactive prototypes for your approval."
+            },
+            "development": {
+                "title": "DEVELOPMENT & INTEGRATION",
+                "desc": "Our engineers build the solution with clean code, integrating AI and other services."
+            },
+            "testing": {
+                "title": "TESTING & QA",
+                "desc": "Rigorous testing across devices to ensure performance, security, and a bug-free experience."
+            },
+            "deployment": {
+                "title": "DEPLOYMENT & SUPPORT",
+                "desc": "We launch your project and provide ongoing maintenance and scaling support."
+            }
+        }
+    },
+    "tech_stack": {
+        "title": "OUR TECH STACK",
+        "subtitle": "The powerful tools and frameworks powering our solutions.",
+        "cta": "Get a Tech Consultation"
+    },
+    "strategic_benefits": {
+        "title": "STRATEGIC BENEFITS",
+        "subtitle": "(THE ROI)",
+        "cards": {
+            "efficiency": {
+                "title": "EFFICIENCY",
+                "desc": "Automate 70% of manual operations."
+            },
+            "precision": {
+                "title": "PRECISION",
+                "desc": "AI-backed decision-making for high-value assets."
+            },
+            "scale": {
+                "title": "SCALE",
+                "desc": "Infrastructure built to handle global demand."
+            }
+        }
+    },
     "services": {
         "title": "OUR SERVICES",
         "subtitle": "Comprehensive digital solutions for modern enterprises.",
@@ -90,6 +251,22 @@
         "services": "Services",
         "contact": "Contact",
         "remote_first": "Remote First Company",
-        "worldwide": "Worldwide"
+        "worldwide": "Worldwide",
+        "company_links": {
+            "about": "About Us",
+            "process": "Our Process",
+            "careers": "Careers",
+            "contact": "Contact Us"
+        },
+        "service_links": {
+            "ai": "AI Integration",
+            "web": "Web Development",
+            "mobile": "Mobile Apps",
+            "blockchain": "Blockchain"
+        },
+        "brand": {
+            "slogan": "software solutions",
+            "description": "Empowering businesses with AI-driven software architecture. Building robust, scalable, and future-proof digital assets."
+        }
     }
 }

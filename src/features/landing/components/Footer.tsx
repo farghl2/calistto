@@ -1,8 +1,11 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin, ArrowUpRight, MessageCircle } from 'lucide-react';
+import LanguageToggle from '@/src/features/landing/components/LanguageToggle';
+import { CTA_LINK } from '@/src/shared/constans/data';
 
 const socialLinks = [
   { icon: Linkedin, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
@@ -11,20 +14,22 @@ const socialLinks = [
   { icon: Instagram, href: '#', color: 'hover:text-amber-400 hover:bg-amber-500/10' },
 ];
 
-const companyLinks = ['About Us', 'Our Process', 'Careers', 'Contact Us'];
-const serviceLinks = ['AI Integration', 'Web Development', 'Mobile Apps', 'Blockchain'];
+
 
 export default function Footer() {
+  const t = useTranslations('footer');
+  const tCommon = useTranslations('common');
+
   return (
     <footer className="relative bg-navy-950 pt-8 pb-8 z-20 overflow-hidden">
       
       {/* Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950 to-navy-900" />
+        <div className="absolute inset-0 bg-linear-to-t from-navy-950 via-navy-950 to-navy-900" />
         
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-size-[60px_60px]" />
         
         {/* Ambient Glows */}
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[150px]" />
@@ -51,12 +56,12 @@ export default function Footer() {
           className="relative mb-12 md:mb-16 group max-w-3xl mx-auto"
         >
           {/* Glowing Border Effect */}
-          <div className="absolute -inset-[1px] bg-gradient-to-r from-cyan-500 via-amber-500 to-cyan-500 rounded-2xl opacity-50 blur-sm group-hover:opacity-80 transition-opacity" />
+          <div className="absolute -inset-[1px] bg-linear-to-r from-cyan-500 via-amber-500 to-cyan-500 rounded-2xl opacity-50 blur-sm group-hover:opacity-80 transition-opacity" />
           
           <div className="relative bg-navy-900/95 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6 sm:p-8 md:p-10 text-center overflow-hidden">
             {/* Inner Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-px bg-linear-to-r from-transparent via-cyan-400 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-b from-cyan-500/5 to-transparent pointer-events-none" />
 
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -64,20 +69,23 @@ export default function Footer() {
               viewport={{ once: true }}
               className="font-oswald text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3"
             >
-              Ready to Build the <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-300">Future?</span>
+              {t('ready_title')} <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-cyan-300">{t('future')}</span>
             </motion.h2>
             <p className="text-gray-300 text-sm md:text-base font-light mb-5 md:mb-6 max-w-xl mx-auto">
-              Let's transform your ideas into intelligent, scalable software solutions today.
+              {t('cta_desc')}
             </p>
             
-            <motion.button 
+            <motion.a 
+              href={CTA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
-              className="px-6 sm:px-8 py-3 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-sm md:text-base rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider relative z-10 inline-flex items-center gap-2"
+              className="px-6 sm:px-8 py-3 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-sm md:text-base rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider relative z-10 inline-flex items-center gap-2"
             >
               <MessageCircle size={18} className="md:w-5 md:h-5" />
-              Chat on WhatsApp
-            </motion.button>
+              {t('chat_whatsapp')}
+            </motion.a>
           </div>
         </motion.div>
         
@@ -89,7 +97,7 @@ export default function Footer() {
             {/* Logo - Matching Navbar Style */}
             <div className="flex items-center gap-3 group">
               {/* Logo Icon Container */}
-              <div className="relative w-11 h-11 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-navy-800 to-navy-900 border border-cyan-500/30 flex items-center justify-center overflow-hidden shadow-lg">
+              <div className="relative w-11 h-11 md:w-12 md:h-12 rounded-xl bg-linear-to-br from-navy-800 to-navy-900 border border-cyan-500/30 flex items-center justify-center overflow-hidden shadow-lg">
                 {/* Corner Accents */}
                 <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-cyan-400/50 rounded-tl-md" />
                 <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-amber-400/50 rounded-br-md" />
@@ -107,16 +115,16 @@ export default function Footer() {
               <div className="flex flex-col">
                 <span className="font-oswald text-xl md:text-2xl font-bold tracking-widest uppercase leading-tight">
                   <span className="text-white">CAL</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-300">ISTTO</span>
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-cyan-300">ISTTO</span>
                 </span>
                 <span className="text-[8px] md:text-[9px] text-gray-500 uppercase tracking-[0.2em] md:tracking-[0.25em] -mt-0.5">
-                  software solutions
+                  {t('brand.slogan')}
                 </span>
               </div>
             </div>
             
             <p className="text-gray-400 leading-relaxed font-light text-sm">
-              Empowering businesses with AI-driven software architecture. Building robust, scalable, and future-proof digital assets.
+              {t('brand.description')}
             </p>
             
             {/* Social Links */}
@@ -139,14 +147,19 @@ export default function Footer() {
           <div>
             <h4 className="font-oswald text-base md:text-lg font-bold text-white uppercase mb-4 md:mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
-              Company
+              {t('company')}
             </h4>
             <ul className="space-y-2 md:space-y-3">
-              {companyLinks.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-2 group text-sm">
+              {[
+                { label: t('company_links.about'), href: '#' },
+                { label: t('company_links.process'), href: '#process' },
+                { label: t('company_links.careers'), href: '#' },
+                { label: t('company_links.contact'), href: '#contact' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-2 group text-sm">
                     <ArrowUpRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-cyan-400" />
-                    <span className="group-hover:translate-x-1 transition-transform">{item}</span>
+                    <span className="group-hover:translate-x-1 transition-transform">{item.label}</span>
                   </a>
                 </li>
               ))}
@@ -157,14 +170,19 @@ export default function Footer() {
           <div>
             <h4 className="font-oswald text-base md:text-lg font-bold text-white uppercase mb-4 md:mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-amber-400" />
-              Services
+              {t('services')}
             </h4>
             <ul className="space-y-2 md:space-y-3">
-              {serviceLinks.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-amber-400 transition-colors flex items-center gap-2 group text-sm">
+              {[
+                { label: t('service_links.ai'), href: '#' },
+                { label: t('service_links.web'), href: '#' },
+                { label: t('service_links.mobile'), href: '#' },
+                { label: t('service_links.blockchain'), href: '#' }
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-gray-400 hover:text-amber-400 transition-colors flex items-center gap-2 group text-sm">
                     <ArrowUpRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-amber-400" />
-                    <span className="group-hover:translate-x-1 transition-transform">{item}</span>
+                    <span className="group-hover:translate-x-1 transition-transform">{item.label}</span>
                   </a>
                 </li>
               ))}
@@ -175,7 +193,7 @@ export default function Footer() {
           <div>
             <h4 className="font-oswald text-base md:text-lg font-bold text-white uppercase mb-4 md:mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
-              Contact
+              {t('contact')}
             </h4>
             <ul className="space-y-3 md:space-y-4">
               <li>
@@ -184,8 +202,8 @@ export default function Footer() {
                     <MapPin size={14} className="md:w-4 md:h-4 text-cyan-400" />
                   </div>
                   <span className="text-xs md:text-sm leading-relaxed">
-                    Remote First Company<br/>
-                    <span className="text-gray-500">Worldwide</span>
+                    {t('remote_first')}<br/>
+                    <span className="text-gray-500">{t('worldwide')}</span>
                   </span>
                 </a>
               </li>
@@ -214,12 +232,16 @@ export default function Footer() {
         <div className="border-t border-white/5 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-500 text-xs md:text-sm flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            © 2026 Calistto. All rights reserved.
+            © 2026 Calistto. {tCommon('all_rights_reserved')}.
           </p>
-          <div className="flex gap-4 md:gap-6">
-            <a href="#" className="text-gray-500 hover:text-white text-xs md:text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-500 hover:text-white text-xs md:text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-500 hover:text-white text-xs md:text-sm transition-colors">Cookies</a>
+          <div className="flex flex-wrap gap-4 md:gap-6 items-center">
+            <a href="#" className="text-gray-500 hover:text-white text-xs md:text-sm transition-colors">{tCommon('privacy_policy')}</a>
+            <a href="#" className="text-gray-500 hover:text-white text-xs md:text-sm transition-colors">{tCommon('terms_of_service')}</a>
+            <a href="#" className="text-gray-500 hover:text-white text-xs md:text-sm transition-colors">{tCommon('cookies')}</a>
+            {/* Language Toggle in Footer */}
+            <div className="ml-2 scale-90">
+                <LanguageToggle />
+            </div>
           </div>
         </div>
 

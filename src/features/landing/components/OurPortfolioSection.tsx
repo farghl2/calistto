@@ -1,62 +1,66 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
 import { ArrowUpRight, Building2, Ship, BarChart3, Blocks, Globe, Smartphone } from 'lucide-react';
-
-const projects = [
-  {
-    id: 1,
-    title: 'AI-POWERED REAL',
-    titleHighlight: 'ESTATE CRM',
-    description: 'Developed a predictive analytics platform for high-value property assets, increasing sales velocity by 35%. Features market trend forecasting and intelligent lead scoring.',
-    icon: Building2,
-    accentColor: 'cyan',
-    stats: [
-      { label: 'Sales Increase', value: '+35%' },
-      { label: 'Lead Conversion', value: '2.5x' },
-      { label: 'Time Saved', value: '60hrs/mo' },
-    ],
-    tags: ['Next.js', 'AI/ML', 'Real Estate'],
-  },
-  {
-    id: 2,
-    title: 'BLOCKCHAIN SUPPLY',
-    titleHighlight: 'CHAIN TRACKER',
-    description: 'Built a decentralized application for real-time transparency and security in global logistics, reducing counterfeiting and delays.',
-    icon: Blocks,
-    accentColor: 'amber',
-    stats: [
-      { label: 'Cost Reduction', value: '-40%' },
-      { label: 'Transparency', value: '100%' },
-      { label: 'Partners', value: '50+' },
-    ],
-    tags: ['Web3', 'Blockchain', 'Logistics'],
-  },
-  {
-    id: 3,
-    title: 'LUXURY YACHT',
-    titleHighlight: 'BOOKING PLATFORM',
-    description: 'Premium yacht charter platform with real-time availability, crew management, and seamless payment integration for high-net-worth clients.',
-    icon: Ship,
-    accentColor: 'cyan',
-    stats: [
-      { label: 'Bookings', value: '+200%' },
-      { label: 'Revenue', value: '$2.5M' },
-      { label: 'User Rating', value: '4.9★' },
-    ],
-    tags: ['React Native', 'Stripe', 'Yachting'],
-  },
-];
+import { CTA_LINK, PORTFOLIO_LINK } from '@/src/shared/constans/data';
 
 export default function OurPortfolioSection() {
+  const t = useTranslations('portfolio');
+
+  const projects = [
+    {
+      id: 1,
+      title: t('projects.real_estate.title'),
+      titleHighlight: t('projects.real_estate.highlight'),
+      description: t('projects.real_estate.desc'),
+      icon: Building2,
+      accentColor: 'cyan',
+      stats: [
+        { label: t('projects.real_estate.stats.sales'), value: '+35%' },
+        { label: t('projects.real_estate.stats.conversion'), value: '2.5x' },
+        { label: t('projects.real_estate.stats.time'), value: '60hrs/mo' },
+      ],
+      tags: ['Next.js', 'AI/ML', 'Real Estate'],
+    },
+    {
+      id: 2,
+      title: t('projects.supply_chain.title'),
+      titleHighlight: t('projects.supply_chain.highlight'),
+      description: t('projects.supply_chain.desc'),
+      icon: Blocks,
+      accentColor: 'amber',
+      stats: [
+        { label: t('projects.supply_chain.stats.cost'), value: '-40%' },
+        { label: t('projects.supply_chain.stats.transparency'), value: '100%' },
+        { label: t('projects.supply_chain.stats.partners'), value: '50+' },
+      ],
+      tags: ['Web3', 'Blockchain', 'Logistics'],
+    },
+    {
+      id: 3,
+      title: t('projects.yacht.title'),
+      titleHighlight: t('projects.yacht.highlight'),
+      description: t('projects.yacht.desc'),
+      icon: Ship,
+      accentColor: 'cyan',
+      stats: [
+        { label: t('projects.yacht.stats.bookings'), value: '+200%' },
+        { label: t('projects.yacht.stats.revenue'), value: '$2.5M' },
+        { label: t('projects.yacht.stats.rating'), value: '4.9★' },
+      ],
+      tags: ['React Native', 'Stripe', 'Yachting'],
+    },
+  ];
+
   return (
     <section id="portfolio" className="relative py-24 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
        
        {/* Background Elements */}
        <div className="absolute inset-0 z-0">
           <ParticlesBackground className="absolute inset-0 z-10 opacity-30" count={40} colors={["#06B6D4", "#F59E0B"]} />
-          <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:60px_60px] opacity-40" />
+          <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-size-[60px_60px] opacity-40" />
           <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-[120px] pointer-events-none" />
        </div>
@@ -71,7 +75,7 @@ export default function OurPortfolioSection() {
              viewport={{ once: true }}
              className="font-oswald text-5xl md:text-6xl font-bold uppercase text-white tracking-wide"
            >
-             OUR PORTFOLIO
+             {t('title')}
            </motion.h2>
            <motion.p 
              initial={{ opacity: 0 }}
@@ -80,7 +84,7 @@ export default function OurPortfolioSection() {
              transition={{ delay: 0.2 }}
              className="text-gray-300 text-lg md:text-xl font-light max-w-2xl mx-auto"
            >
-             Showcasing our most impactful and innovative client projects.
+             {t('subtitle')}
            </motion.p>
          </div>
 
@@ -134,7 +138,7 @@ export default function OurPortfolioSection() {
                            repeat: Infinity, 
                            ease: "easeInOut" 
                          }}
-                         className={`relative w-32 h-32 rounded-2xl bg-gradient-to-br ${isCyan ? 'from-cyan-500/30 to-cyan-600/10' : 'from-amber-500/30 to-amber-600/10'} border border-white/10 flex items-center justify-center`}
+                         className={`relative w-32 h-32 rounded-2xl bg-linear-to-br ${isCyan ? 'from-cyan-500/30 to-cyan-600/10' : 'from-amber-500/30 to-amber-600/10'} border border-white/10 flex items-center justify-center`}
                        >
                          <IconComponent 
                            size={64} 
@@ -213,7 +217,7 @@ export default function OurPortfolioSection() {
                    {/* Title */}
                    <h3 className="font-oswald text-3xl md:text-4xl font-bold uppercase text-white leading-tight">
                      {project.title} <br />
-                     <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isCyan ? 'from-cyan-400 to-blue-500' : 'from-amber-400 to-orange-500'}`}>
+                     <span className={`text-transparent bg-clip-text bg-linear-to-r ${isCyan ? 'from-cyan-400 to-blue-500' : 'from-amber-400 to-orange-500'}`}>
                        {project.titleHighlight}
                      </span>
                    </h3>
@@ -224,14 +228,15 @@ export default function OurPortfolioSection() {
                    </p>
 
                    {/* CTA Button */}
-                   <motion.button 
+                   <motion.a 
+                     href={`/projects/${project.id}`}
                      whileHover={{ scale: 1.05, x: 5 }}
                      whileTap={{ scale: 0.98 }}
-                     className={`px-8 py-3 bg-gradient-to-r ${isCyan ? 'from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]' : 'from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]'} text-black font-bold rounded-xl transition-all flex items-center gap-2 uppercase tracking-wide`}
+                     className={`px-8 py-3 bg-linear-to-r ${isCyan ? 'from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]' : 'from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]'} text-black font-bold rounded-xl transition-all inline-flex items-center gap-2 uppercase tracking-wide`}
                    >
-                     View Case Study
+                     {t('view_case_study')}
                      <ArrowUpRight size={18} />
-                   </motion.button>
+                   </motion.a>
                  </motion.div>
 
                </motion.div>
@@ -246,14 +251,15 @@ export default function OurPortfolioSection() {
            viewport={{ once: true }}
            className="flex justify-center mt-20"
          >
-           <motion.button 
-             whileHover={{ scale: 1.05 }}
-             whileTap={{ scale: 0.98 }}
-             className="px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider flex items-center gap-3"
-           >
-             <Globe size={20} />
-             View All Projects
-           </motion.button>
+           <motion.a 
+            href={PORTFOLIO_LINK}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-10 py-4 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider inline-flex items-center gap-3"
+          >
+            <Globe size={20} />
+            {t('view_all')}
+          </motion.a>
          </motion.div>
 
        </div>

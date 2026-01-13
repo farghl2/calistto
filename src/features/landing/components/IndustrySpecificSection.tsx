@@ -1,53 +1,56 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
 
-const industries = [
-  {
-    id: 'real-estate',
-    title: 'REAL ESTATE',
-    description: 'AI-driven CRM and market prediction for high-value property assets',
-    image: '/card-real-estate.png',
-    color: 'cyan', // #06B6D4
-    borderColor: 'border-cyan-400',
-    glowColor: 'shadow-cyan-400/50',
-    headerGradient: 'from-cyan-400/20 to-transparent'
-  },
-  {
-    id: 'yachts',
-    title: 'YACHTS',
-    description: 'Intelligent fleet management and brokerage automation.',
-    image: '/card-yacht.png',
-    color: 'amber', // #F59E0B
-    borderColor: 'border-amber-400',
-    glowColor: 'shadow-amber-400/50',
-    headerGradient: 'from-amber-400/20 to-transparent'
-  },
-  {
-    id: 'stocks',
-    title: 'STOCKS',
-    description: 'Algorithmic analysis and value investing tools',
-    image: '/card-stocks.png',
-    color: 'emerald', // #10B981
-    borderColor: 'border-emerald-400',
-    glowColor: 'shadow-emerald-400/50',
-    headerGradient: 'from-emerald-400/20 to-transparent'
-  },
-  {
-    id: 'ecommerce',
-    title: 'E-COMMERCE & RESTAURANTS',
-    description: 'Predictive supply chain and customer behavior AI',
-    image: '/card-ecommerce.png',
-    color: 'purple', // #A855F7
-    borderColor: 'border-purple-400',
-    glowColor: 'shadow-purple-400/50',
-    headerGradient: 'from-purple-400/20 to-transparent'
-  }
-];
-
 export default function IndustrySpecificSection() {
+  const t = useTranslations('industry_specific');
+
+  const industries = [
+    {
+      id: 'real-estate',
+      title: t('cards.real_estate.title'),
+      description: t('cards.real_estate.desc'),
+      image: '/card-real-estate.png',
+      color: 'cyan', // #06B6D4
+      borderColor: 'border-cyan-400',
+      glowColor: 'shadow-cyan-400/50',
+      headerGradient: 'from-cyan-400/20 to-transparent'
+    },
+    {
+      id: 'yachts',
+      title: t('cards.yachts.title'),
+      description: t('cards.yachts.desc'),
+      image: '/card-yacht.png',
+      color: 'amber', // #F59E0B
+      borderColor: 'border-amber-400',
+      glowColor: 'shadow-amber-400/50',
+      headerGradient: 'from-amber-400/20 to-transparent'
+    },
+    {
+      id: 'stocks',
+      title: t('cards.stocks.title'),
+      description: t('cards.stocks.desc'),
+      image: '/card-stocks.png',
+      color: 'emerald', // #10B981
+      borderColor: 'border-emerald-400',
+      glowColor: 'shadow-emerald-400/50',
+      headerGradient: 'from-emerald-400/20 to-transparent'
+    },
+    {
+      id: 'ecommerce',
+      title: t('cards.ecommerce.title'),
+      description: t('cards.ecommerce.desc'),
+      image: '/card-ecommerce.png',
+      color: 'purple', // #A855F7
+      borderColor: 'border-purple-400',
+      glowColor: 'shadow-purple-400/50',
+      headerGradient: 'from-purple-400/20 to-transparent'
+    }
+  ];
+
   return (
     <section className="relative pt-32 pb-20 -mt-20 md:-mt-32 overflow-hidden z-10 bg-linear-to-b from-transparent to-navy-950">
        {/* Particles Effect */}
@@ -66,7 +69,7 @@ export default function IndustrySpecificSection() {
              viewport={{ once: true }}
              className="font-oswald text-4xl md:text-5xl font-bold uppercase text-white tracking-wide"
            >
-             INDUSTRY-SPECIFIC AI INTELLIGENCE
+             {t('title')}
            </motion.h2>
            <motion.p 
              initial={{ opacity: 0 }}
@@ -75,7 +78,7 @@ export default function IndustrySpecificSection() {
              transition={{ delay: 0.2 }}
              className="text-gray-400 font-light text-lg tracking-wide"
            >
-             Deep-learning models trained for the unique demands of elite sectors
+             {t('subtitle')}
            </motion.p>
          </div>
 
@@ -95,7 +98,7 @@ export default function IndustrySpecificSection() {
                  <div className="w-full h-full bg-navy-900/90 rounded-[14px] overflow-hidden flex flex-col relative">
                     
                     {/* Top Glow/Highlight */}
-                    <div className={`absolute top-0 left-0 w-full h-32 bg-gradient-to-b ${industry.headerGradient} opacity-50 group-hover:opacity-80 transition-opacity`} />
+                    <div className={`absolute top-0 left-0 w-full h-32 bg-linear-to-b ${industry.headerGradient} opacity-50 group-hover:opacity-80 transition-opacity`} />
                     
                     {/* Image Area */}
                     <div className="relative w-full aspect-square flex items-center justify-center overflow-hidden">

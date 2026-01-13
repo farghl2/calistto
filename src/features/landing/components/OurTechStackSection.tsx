@@ -1,7 +1,9 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
+import { CTA_LINK } from '@/src/shared/constans/data';
 
 // Tech Stack Data with better icons and colors matching the design
 const techStack = [
@@ -51,6 +53,13 @@ const techStack = [
     ),
   },
   {
+    name: 'NestJS',
+    color: 'amber',
+    svg: (
+      <span className="font-bold text-2xl md:text-3xl tracking-tight">NestJS</span>
+    ),
+  },
+  {
     name: 'PostgreSQL',
     color: 'cyan',
     svg: (
@@ -94,6 +103,8 @@ const techStack = [
 ];
 
 export default function OurTechStackSection() {
+  const t = useTranslations('tech_stack');
+
   return (
     <section className="relative py-24 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
        
@@ -163,7 +174,7 @@ export default function OurTechStackSection() {
              viewport={{ once: true }}
              className="font-oswald text-5xl md:text-6xl font-bold uppercase text-white tracking-wide"
            >
-             OUR TECH STACK
+             {t('title')}
            </motion.h2>
            <motion.p 
              initial={{ opacity: 0 }}
@@ -172,15 +183,15 @@ export default function OurTechStackSection() {
              transition={{ delay: 0.2 }}
              className="text-gray-300 text-lg md:text-xl font-light"
            >
-             The powerful tools and frameworks powering our solutions.
+             {t('subtitle')}
            </motion.p>
          </div>
 
          {/* Infinite Scroll Marquee */}
          <div className="relative w-full overflow-hidden mb-20">
            {/* Fade Edges */}
-           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-navy-950 to-transparent z-10 pointer-events-none" />
-           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-navy-950 to-transparent z-10 pointer-events-none" />
+           <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-navy-950 to-transparent z-10 pointer-events-none" />
+           <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-navy-950 to-transparent z-10 pointer-events-none" />
            
            {/* Scrolling Container */}
            <motion.div
@@ -227,13 +238,16 @@ export default function OurTechStackSection() {
            viewport={{ once: true }}
            className="flex justify-center"
          >
-           <motion.button 
+           <motion.a 
+             href={CTA_LINK}
+             target="_blank"
+             rel="noopener noreferrer"
              whileHover={{ scale: 1.05 }}
              whileTap={{ scale: 0.98 }}
-             className="px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-sm sm:text-lg rounded-4xl shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider border-2 border-amber-400/50"
+             className="px-10 py-4 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-sm sm:text-lg rounded-4xl shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider border-2 border-amber-400/50 inline-block text-center"
            >
-             Get a Tech Consultation
-           </motion.button>
+             {t('cta')}
+           </motion.a>
          </motion.div>
 
        </div>

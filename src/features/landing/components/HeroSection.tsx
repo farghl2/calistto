@@ -1,11 +1,14 @@
 "use client";
 
 import { motion } from 'motion/react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { ChevronDown, Mouse } from 'lucide-react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
+import { CTA_LINK, PORTFOLIO_LINK } from '@/src/shared/constans/data';
 
 export default function HeroSection() {
+  const t = useTranslations('hero');
   const scrollToNext = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -33,13 +36,14 @@ export default function HeroSection() {
           >
             <h1 className="font-oswald font-bold leading-[1.1] tracking-wide text-5xl md:text-6xl lg:text-7xl">
               <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-200 to-amber-500 block mb-2">
-                AI-POWERED
+                {t('title_prefix')}
               </span>
               <span className="text-white block">
-                SOFTWARE FOR REAL
+                {/* {t('title_highlight')} */} {/* Note: Swapped logic? No, mapping 1:1 based on lines */}
+                {t('title_highlight')}
               </span>
               <span className="text-white block">
-                ESTATE & YACHTS.
+                {t('title_suffix')}
               </span>
             </h1>
           </motion.div>
@@ -50,7 +54,7 @@ export default function HeroSection() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-gray-300 text-lg md:text-xl font-light tracking-wide max-w-lg"
           >
-            Building intelligent platforms to manage and optimize luxury assets.
+            {t('subtitle')}
           </motion.p>
 
           <motion.div 
@@ -59,12 +63,12 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="flex flex-wrap items-center gap-4"
           >
-            <button className="px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full tracking-wider transition-all shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105">
-              Discuss Your Project
-            </button>
-            <button className="px-8 py-3 border border-white/20 text-white hover:bg-white/10 font-bold rounded-full tracking-wider transition-all backdrop-blur-sm">
-              VIEW PORTFOLIO
-            </button>
+            <a href={CTA_LINK} target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-amber-500 hover:bg-amber-400 text-black font-bold rounded-full tracking-wider transition-all shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105 inline-block text-center">
+              {t('start_project')}
+            </a>
+            <a href={PORTFOLIO_LINK} className="px-8 py-3 border border-white/20 text-white hover:bg-white/10 font-bold rounded-full tracking-wider transition-all backdrop-blur-sm inline-block text-center">
+              {t('view_work')}
+            </a>
           </motion.div>
 
           {/* Partners */}
@@ -182,7 +186,7 @@ export default function HeroSection() {
           
           {/* Text Label */}
           <span className="text-[10px] uppercase tracking-widest text-cyan-400/60 group-hover:text-cyan-400 transition-colors">
-            Scroll
+            {t('scroll')}
           </span>
         </motion.div>
       </motion.button>

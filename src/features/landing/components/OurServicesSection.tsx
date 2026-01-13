@@ -1,61 +1,65 @@
 "use client";
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import { BrainCircuit, Code2, Smartphone, Blocks } from 'lucide-react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
-
-const services = [
-  {
-    title: 'AI & MACHINE LEARNING SOLUTIONS',
-    description: 'Custom deep-learning models for predictive analytics, automation, and intelligent data insights.',
-    icon: BrainCircuit,
-    borderColor: 'border-cyan-500/60',
-    glowColor: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-    hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-    iconColor: 'text-cyan-400',
-    iconGlow: 'drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]',
-    iconBg: 'from-cyan-500/20 to-cyan-600/10',
-    accentColor: 'cyan',
-  },
-  {
-    title: 'MODERN WEB DEVELOPMENT',
-    description: 'Scalable, high-performance web applications built with Next.js, React, and Node.js.',
-    icon: Code2,
-    borderColor: 'border-amber-500/60',
-    glowColor: 'shadow-[0_0_30px_rgba(245,158,11,0.3)]',
-    hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(245,158,11,0.5)]',
-    iconColor: 'text-amber-400',
-    iconGlow: 'drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]',
-    iconBg: 'from-amber-500/20 to-amber-600/10',
-    accentColor: 'amber',
-  },
-  {
-    title: 'CROSS-PLATFORM MOBILE APPS',
-    description: 'Native-quality iOS and Android applications for seamless user experiences on any device.',
-    icon: Smartphone,
-    borderColor: 'border-cyan-500/60',
-    glowColor: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
-    hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
-    iconColor: 'text-cyan-400',
-    iconGlow: 'drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]',
-    iconBg: 'from-cyan-500/20 to-cyan-600/10',
-    accentColor: 'cyan',
-  },
-  {
-    title: 'BLOCKCHAIN & WEB3 INNOVATION',
-    description: 'Secure decentralized applications (dApps), smart contracts, and crypto-asset integration.',
-    icon: Blocks,
-    borderColor: 'border-amber-500/60',
-    glowColor: 'shadow-[0_0_30px_rgba(245,158,11,0.3)]',
-    hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(245,158,11,0.5)]',
-    iconColor: 'text-amber-400',
-    iconGlow: 'drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]',
-    iconBg: 'from-amber-500/20 to-amber-600/10',
-    accentColor: 'amber',
-  }
-];
+import { CTA_LINK } from '@/src/shared/constans/data';
 
 export default function OurServicesSection() {
+  const t = useTranslations('services');
+
+  const services = [
+    {
+      title: t('cards.ai_solutions.title'),
+      description: t('cards.ai_solutions.desc'),
+      icon: BrainCircuit,
+      borderColor: 'border-cyan-500/60',
+      glowColor: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+      hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+      iconColor: 'text-cyan-400',
+      iconGlow: 'drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]',
+      iconBg: 'from-cyan-500/20 to-cyan-600/10',
+      accentColor: 'cyan',
+    },
+    {
+      title: t('cards.web_dev.title'),
+      description: t('cards.web_dev.desc'),
+      icon: Code2,
+      borderColor: 'border-amber-500/60',
+      glowColor: 'shadow-[0_0_30px_rgba(245,158,11,0.3)]',
+      hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(245,158,11,0.5)]',
+      iconColor: 'text-amber-400',
+      iconGlow: 'drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]',
+      iconBg: 'from-amber-500/20 to-amber-600/10',
+      accentColor: 'amber',
+    },
+    {
+      title: t('cards.mobile_apps.title'),
+      description: t('cards.mobile_apps.desc'),
+      icon: Smartphone,
+      borderColor: 'border-cyan-500/60',
+      glowColor: 'shadow-[0_0_30px_rgba(6,182,212,0.3)]',
+      hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)]',
+      iconColor: 'text-cyan-400',
+      iconGlow: 'drop-shadow-[0_0_15px_rgba(6,182,212,0.8)]',
+      iconBg: 'from-cyan-500/20 to-cyan-600/10',
+      accentColor: 'cyan',
+    },
+    {
+      title: t('cards.blockchain.title'),
+      description: t('cards.blockchain.desc'),
+      icon: Blocks,
+      borderColor: 'border-amber-500/60',
+      glowColor: 'shadow-[0_0_30px_rgba(245,158,11,0.3)]',
+      hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(245,158,11,0.5)]',
+      iconColor: 'text-amber-400',
+      iconGlow: 'drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]',
+      iconBg: 'from-amber-500/20 to-amber-600/10',
+      accentColor: 'amber',
+    }
+  ];
+
   return (
     <section id="services" className="relative py-24 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
       
@@ -63,7 +67,7 @@ export default function OurServicesSection() {
       <div className="absolute inset-0 z-0">
          <ParticlesBackground className="absolute inset-0 z-10 opacity-30" count={60} colors={["#06B6D4", "#F59E0B"]} />
          {/* Circuit Grid Pattern */}
-         <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:60px_60px] opacity-50" />
+         <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-size-[60px_60px] opacity-50" />
          {/* Central Glow */}
          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
          {/* Top Right Accent */}
@@ -80,7 +84,7 @@ export default function OurServicesSection() {
             viewport={{ once: true }}
             className="font-oswald text-5xl md:text-6xl font-bold uppercase text-white tracking-wide"
           >
-            OUR SERVICES
+            {t('title')}
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -89,7 +93,7 @@ export default function OurServicesSection() {
             transition={{ delay: 0.2 }}
             className="text-gray-300 text-lg md:text-xl font-light max-w-2xl mx-auto"
           >
-            Tailored digital solutions powered by advanced AI and robust engineering.
+            {t('subtitle')}
           </motion.p>
         </div>
 
@@ -112,7 +116,7 @@ export default function OurServicesSection() {
                 
                 {/* Icon Container with Neon Effect */}
                 <motion.div 
-                  className={`relative shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-gradient-to-br ${service.iconBg} border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
+                  className={`relative shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-linear-to-br ${service.iconBg} border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}
                   whileHover={{ rotate: [0, -3, 3, 0] }}
                   transition={{ duration: 0.4 }}
                 >
@@ -156,13 +160,16 @@ export default function OurServicesSection() {
           viewport={{ once: true }}
           className="flex justify-center"
         >
-          <motion.button 
+          <motion.a 
+            href={CTA_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider"
+            className="px-10 py-4 bg-linear-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-bold text-lg rounded-full shadow-[0_0_30px_rgba(245,158,11,0.4)] hover:shadow-[0_0_50px_rgba(245,158,11,0.6)] transition-all uppercase tracking-wider inline-block text-center"
           >
-            Ask an Engineer
-          </motion.button>
+            {t('cta')}
+          </motion.a>
         </motion.div>
 
       </div>
