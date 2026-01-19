@@ -68,9 +68,23 @@ export default function SingleProject({ projectId }: { projectId: number }) {
                     ))}
                 </h1>
 
-                <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto md:mx-0">
+                <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto md:mx-0 mb-8">
                     {project.description}
                 </p>
+                
+                {/* Live Demo Button */}
+                {(project).demoLink && (
+                    <motion.a
+                        href={(project).demoLink} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`inline-flex items-center gap-2 px-8 py-3 rounded-full ${isCyan ? 'bg-cyan-500 hover:bg-cyan-400 text-navy-950' : 'bg-amber-500 hover:bg-amber-400 text-navy-950'} font-bold uppercase tracking-wide transition-all shadow-lg hover:shadow-xl`}
+                    >
+                        Live Demo <ExternalLink size={18} />
+                    </motion.a>
+                )}
 
                 {/* Quick Stats in Hero */}
                 <div className="flex flex-wrap justify-center md:justify-start gap-8 mt-10">

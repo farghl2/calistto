@@ -3,56 +3,12 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import ParticlesBackground from '@/src/features/landing/components/ParticlesBackground';
-import { ArrowUpRight, Building2, Ship, BarChart3, Blocks, Globe, Smartphone } from 'lucide-react';
-import { CTA_LINK, PORTFOLIO_LINK } from '@/src/shared/constans/data';
+import { ArrowUpRight, Globe, ExternalLink } from 'lucide-react';
+import { CTA_LINK, PORTFOLIO_LINK, projectsData } from '@/src/shared/constans/data';
 
 export default function OurPortfolioSection() {
   const t = useTranslations('portfolio');
-
-  const projects = [
-    {
-      id: 1,
-      title: t('projects.real_estate.title'),
-      titleHighlight: t('projects.real_estate.highlight'),
-      description: t('projects.real_estate.desc'),
-      icon: Building2,
-      accentColor: 'cyan',
-      stats: [
-        { label: t('projects.real_estate.stats.sales'), value: '+35%' },
-        { label: t('projects.real_estate.stats.conversion'), value: '2.5x' },
-        { label: t('projects.real_estate.stats.time'), value: '60hrs/mo' },
-      ],
-      tags: ['Next.js', 'AI/ML', 'Real Estate'],
-    },
-    {
-      id: 2,
-      title: t('projects.supply_chain.title'),
-      titleHighlight: t('projects.supply_chain.highlight'),
-      description: t('projects.supply_chain.desc'),
-      icon: Blocks,
-      accentColor: 'amber',
-      stats: [
-        { label: t('projects.supply_chain.stats.cost'), value: '-40%' },
-        { label: t('projects.supply_chain.stats.transparency'), value: '100%' },
-        { label: t('projects.supply_chain.stats.partners'), value: '50+' },
-      ],
-      tags: ['Web3', 'Blockchain', 'Logistics'],
-    },
-    {
-      id: 3,
-      title: t('projects.yacht.title'),
-      titleHighlight: t('projects.yacht.highlight'),
-      description: t('projects.yacht.desc'),
-      icon: Ship,
-      accentColor: 'cyan',
-      stats: [
-        { label: t('projects.yacht.stats.bookings'), value: '+200%' },
-        { label: t('projects.yacht.stats.revenue'), value: '$2.5M' },
-        { label: t('projects.yacht.stats.rating'), value: '4.9★' },
-      ],
-      tags: ['React Native', 'Stripe', 'Yachting'],
-    },
-  ];
+  const projects = projectsData;
 
   return (
     <section id="portfolio" className="relative py-24 bg-navy-950 overflow-hidden z-10 border-t border-cyan-500/10">
@@ -227,16 +183,33 @@ export default function OurPortfolioSection() {
                      {project.description}
                    </p>
 
-                   {/* CTA Button */}
-                   <motion.a 
-                     href={`/projects/${project.id}`}
-                     whileHover={{ scale: 1.05, x: 5 }}
-                     whileTap={{ scale: 0.98 }}
-                     className={`px-8 py-3 bg-linear-to-r ${isCyan ? 'from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]' : 'from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]'} text-black font-bold rounded-xl transition-all inline-flex items-center gap-2 uppercase tracking-wide`}
-                   >
-                     {t('view_case_study')}
-                     <ArrowUpRight size={18} />
-                   </motion.a>
+                   {/* Buttons */}
+                   <div className="flex flex-wrap gap-4">
+                     <motion.a 
+                       href={`/projects/${project.id}`}
+                       whileHover={{ scale: 1.05, x: 5 }}
+                       whileTap={{ scale: 0.98 }}
+                       className={`px-8 py-3 bg-linear-to-r ${isCyan ? 'from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]' : 'from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]'} text-black font-bold rounded-xl transition-all inline-flex items-center gap-2 uppercase tracking-wide`}
+                     >
+                       {t('view_case_study')}
+                       <ArrowUpRight size={18} />
+                     </motion.a>
+
+                     {/* Live Demo Button */}
+                     {project.demoLink && (
+                       <motion.a 
+                         href={project.demoLink}
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         whileHover={{ scale: 1.05, x: 5 }}
+                         whileTap={{ scale: 0.98 }}
+                         className={`px-8 py-3 border-2 ${isCyan ? 'border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 shadow-[0_0_20px_rgba(6,182,212,0.1)]' : 'border-amber-500 text-amber-400 hover:bg-amber-500/10 shadow-[0_0_20px_rgba(245,158,11,0.1)]'} font-bold rounded-xl transition-all inline-flex items-center gap-2 uppercase tracking-wide`}
+                       >
+                         Live Demo
+                         <ExternalLink size={18} />
+                       </motion.a>
+                     )}
+                   </div>
                  </motion.div>
 
                </motion.div>

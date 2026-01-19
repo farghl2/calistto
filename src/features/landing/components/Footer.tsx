@@ -3,15 +3,16 @@
 import { useTranslations } from 'next-intl';
 import { motion } from 'motion/react';
 import Image from 'next/image';
-import { Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin, ArrowUpRight, MessageCircle, Facebook } from 'lucide-react';
 import LanguageToggle from '@/src/features/landing/components/LanguageToggle';
 import { CTA_LINK } from '@/src/shared/constans/data';
 
 const socialLinks = [
-  { icon: Linkedin, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
-  { icon: Github, href: '#', color: 'hover:text-white hover:bg-white/10' },
-  { icon: Twitter, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
-  { icon: Instagram, href: '#', color: 'hover:text-amber-400 hover:bg-amber-500/10' },
+  {icon:Facebook, href:'https://www.facebook.com/share/1H3buCCqqF/', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
+  // { icon: Linkedin, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
+  // { icon: Github, href: '#', color: 'hover:text-white hover:bg-white/10' },
+  // { icon: Twitter, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
+  // { icon: Instagram, href: '#', color: 'hover:text-amber-400 hover:bg-amber-500/10' },
 ];
 
 
@@ -19,6 +20,15 @@ const socialLinks = [
 export default function Footer() {
   const t = useTranslations('footer');
   const tCommon = useTranslations('common');
+  const tNav = useTranslations('navigation');
+
+  const navItems = [
+    { name: tNav('home'), href: '/' },
+    { name: tNav('services'), href: '/#services' },
+    { name: tNav('portfolio'), href: '/#portfolio' },
+    { name: tNav('process'), href: '/#process' },
+    { name: tNav('engine'), href: '/#tech' },
+  ];
 
   return (
     <footer className="relative bg-navy-950 pt-8 pb-8 z-20 overflow-hidden">
@@ -150,16 +160,11 @@ export default function Footer() {
               {t('company')}
             </h4>
             <ul className="space-y-2 md:space-y-3">
-              {[
-                { label: t('company_links.about'), href: '#' },
-                { label: t('company_links.process'), href: '#process' },
-                { label: t('company_links.careers'), href: '#' },
-                { label: t('company_links.contact'), href: '#contact' }
-              ].map((item) => (
-                <li key={item.label}>
+              {navItems.map((item) => (
+                <li key={item.name}>
                   <a href={item.href} className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-2 group text-sm">
                     <ArrowUpRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-cyan-400" />
-                    <span className="group-hover:translate-x-1 transition-transform">{item.label}</span>
+                    <span className="group-hover:translate-x-1 transition-transform">{item.name}</span>
                   </a>
                 </li>
               ))}
@@ -174,10 +179,10 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 md:space-y-3">
               {[
-                { label: t('service_links.ai'), href: '#' },
-                { label: t('service_links.web'), href: '#' },
-                { label: t('service_links.mobile'), href: '#' },
-                { label: t('service_links.blockchain'), href: '#' }
+                { label: t('service_links.ai'), href: CTA_LINK },
+                { label: t('service_links.web'), href: CTA_LINK },
+                { label: t('service_links.mobile'), href: CTA_LINK },
+                
               ].map((item) => (
                 <li key={item.label}>
                   <a href={item.href} className="text-gray-400 hover:text-amber-400 transition-colors flex items-center gap-2 group text-sm">
@@ -202,25 +207,25 @@ export default function Footer() {
                     <MapPin size={14} className="md:w-4 md:h-4 text-cyan-400" />
                   </div>
                   <span className="text-xs md:text-sm leading-relaxed">
-                    {t('remote_first')}<br/>
-                    <span className="text-gray-500">{t('worldwide')}</span>
+                    Alexandria, Egypt<br/>
+                    {/* <span className="text-gray-500">{t('worldwide')}</span> */}
                   </span>
                 </a>
               </li>
               <li>
-                <a href="mailto:islam@calistto.com" className="flex items-center gap-3 text-gray-400 group hover:text-cyan-400 transition-colors">
+                <a href="mailto:contact@calistto.com" className="flex items-center gap-3 text-gray-400 group hover:text-cyan-400 transition-colors">
                   <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 transition-all">
                     <Mail size={14} className="md:w-4 md:h-4 text-cyan-400" />
                   </div>
-                  <span className="text-xs md:text-sm">islam@calistto.com</span>
+                  <span className="text-xs md:text-sm">contact@calistto.com</span>
                 </a>
               </li>
               <li>
-                <a href="tel:+201000000000" className="flex items-center gap-3 text-gray-400 group hover:text-cyan-400 transition-colors">
+                <a href="tel:+201090784354" className="flex items-center gap-3 text-gray-400 group hover:text-cyan-400 transition-colors">
                   <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 transition-all">
                     <Phone size={14} className="md:w-4 md:h-4 text-cyan-400" />
                   </div>
-                  <span className="text-xs md:text-sm">+20 100 000 0000</span>
+                  <span className="text-xs md:text-sm">+20 109 078 4354</span>
                 </a>
               </li>
             </ul>

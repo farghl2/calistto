@@ -46,18 +46,7 @@ export default function OurServicesSection() {
       iconBg: 'from-cyan-500/20 to-cyan-600/10',
       accentColor: 'cyan',
     },
-    {
-      title: t('cards.blockchain.title'),
-      description: t('cards.blockchain.desc'),
-      icon: Blocks,
-      borderColor: 'border-amber-500/60',
-      glowColor: 'shadow-[0_0_30px_rgba(245,158,11,0.3)]',
-      hoverGlow: 'group-hover:shadow-[0_0_50px_rgba(245,158,11,0.5)]',
-      iconColor: 'text-amber-400',
-      iconGlow: 'drop-shadow-[0_0_15px_rgba(245,158,11,0.8)]',
-      iconBg: 'from-amber-500/20 to-amber-600/10',
-      accentColor: 'amber',
-    }
+    
   ];
 
   return (

@@ -14,13 +14,13 @@ import { useLocale, useTranslations } from 'next-intl';
 
 export default function Navbar() {
   const t = useTranslations('navigation');
-
-  const navItems = [
-    { name: t('home'), href: '/' },
-    { name: t('services'), href: '/#services' },
-    { name: t('portfolio'), href: '/#portfolio' },
-    { name: t('process'), href: '/#process' },
-    { name: t('engine'), href: '/#tech' },
+  
+   const navItems = [
+   { name: t('home'), href: '/' },
+   { name: t('services'), href: '/#services' },
+   { name: t('portfolio'), href: '/#portfolio' },
+   { name: t('process'), href: '/#process' },
+   { name: t('engine'), href: '/#tech' },
   ];
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -126,7 +126,10 @@ export default function Navbar() {
 
         {/* CTA Button & Language Toggle */}
         <div className="hidden md:flex items-center gap-4">
-           <LanguageToggle />
+          {/* <div className='hidden md:flex'> */}
+
+           {/* <LanguageToggle /> */}
+          {/* </div> */}
            <a 
              href={CTA_LINK}
              target="_blank"

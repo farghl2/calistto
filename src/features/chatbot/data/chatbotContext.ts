@@ -54,37 +54,18 @@ export const SERVICES = [
   },
 ];
 
-export const PROJECTS = [
-  {
-    id: "realstate-platform",
-    name: "Real Estate Platform",
-    category: "Real Estate",
-    description: "A comprehensive real estate platform with property listings, virtual tours, and AI-powered property recommendations.",
-    features: ["Property search", "3D virtual tours", "AI recommendations", "Booking system"],
-    status: "Completed",
-  },
-  {
-    id: "yacht-booking",
-    name: "Yacht Booking System",
-    category: "Yachting",
-    description: "Luxury yacht booking platform with real-time availability, crew management, and payment processing.",
-    features: ["Yacht listings", "Real-time booking", "Payment integration", "Captain dashboard"],
-    status: "Completed",
-  },
-  {
-    id: "fintech-dashboard",
-    name: "Financial Analytics Dashboard",
-    category: "Finance",
-    description: "Advanced financial analytics dashboard with real-time market data, portfolio tracking, and AI insights.",
-    features: ["Market data", "Portfolio tracking", "AI predictions", "Custom alerts"],
-    status: "In Development",
-  },
-];
+import { projectsData } from "@/src/shared/constans/data";
+
+export const PROJECTS = projectsData;
+
+// ... (keep intermediate code) ...
+
+
 
 export const FAQ = [
   {
     question: "What technologies does Calistto use?",
-    answer: "We primarily use Next.js, React, TypeScript, and Node.js for web development. For mobile, we use React Native. Our AI solutions leverage OpenAI, Google Gemini, and custom ML models.",
+    answer: "We primarily use Next.js,Nest.js , React, TypeScript, and Node.js for web development. For mobile, we use React Native or Flutter. Our AI solutions leverage OpenAI, Google Gemini, and custom ML models.",
   },
   {
     question: "How long does a typical project take?",
@@ -115,6 +96,7 @@ export const FAQ = [
 export const TECH_STACK = [
   { name: "React", category: "Frontend", proficiency: "Expert" },
   { name: "Next.js", category: "Frontend", proficiency: "Expert" },
+  { name: "Nest.js", category: "Backend", proficiency: "Expert" },
   { name: "TypeScript", category: "Language", proficiency: "Expert" },
   { name: "Node.js", category: "Backend", proficiency: "Expert" },
   { name: "Python", category: "AI/ML", proficiency: "Advanced" },
@@ -184,10 +166,14 @@ Deliverables: ${s.deliverables.join(", ")}
 
 ## Our Projects
 ${PROJECTS.map(p => `
-### ${p.name} (${p.category})
+### ${p.title} (${p.category})
 ${p.description}
+Tags: ${p.tags.join(", ")}
 Features: ${p.features.join(", ")}
-Status: ${p.status}
+Challenge: ${p.details.challenge}
+Solution: ${p.details.solution}
+Outcomes: ${p.details.outcomes.join(", ")}
+Demo: ${(p as any).demoLink || "N/A"}
 `).join("\n")}
 
 ## Frequently Asked Questions
