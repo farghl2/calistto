@@ -1,6 +1,6 @@
 import { Building2, Blocks, Ship, Zap, ShoppingCart, BrainCircuit, BarChart3 } from 'lucide-react';
 
-export const CTA_LINK = "https://api.whatsapp.com/send/?phone=%2B201090784354&text&type=phone_number&app_absent=0";
+export const CTA_LINK = "https://api.whatsapp.com/send/?phone=%2B201122882154&text&type=phone_number&app_absent=0";
 export const PORTFOLIO_LINK = "/projects";
 export const SERVICES_LINK = "/#services";
 export const PROCESS_LINK = "/#process";
@@ -54,7 +54,7 @@ export const projectsData = [
         outcomes: ['35% Increase in Sales', '2.5x Better Conversion', '60 Hours saved per month']
     },
     features: ['Automated Lead Scoring', 'Smart Property Matching', 'AI Valuation Engine', 'Seamless Communication'],
-    demoLink:'https://api.whatsapp.com/send/?phone=%2B201090784354&text&type=phone_number&app_absent=0'
+    demoLink:'https://api.whatsapp.com/send/?phone=%2B201122882154&text&type=phone_number&app_absent=0'
   },
   {
     id: 3,
