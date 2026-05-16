@@ -30,7 +30,7 @@
         "title_prefix": "INTELLIGENT",
         "title_highlight": "BUSINESS",
         "title_suffix": "INFRASTRUCTURE",
-        "subtitle": "We engineer AI-powered software ecosystems for Real Estate, Yachting, and Financial sectors. Scalable, secure, and future-proof.",
+        "subtitle": "We engineer software ecosystems for Real Estate, Yachting, and Financial sectors. Scalable, secure, and future-proof.",
         "start_project": "Start Your Project",
         "view_work": "View Our Work",
         "scroll": "Scroll"
@@ -110,24 +110,24 @@
         }
     },
     "industry_specific": {
-        "title": "INDUSTRY-SPECIFIC AI INTELLIGENCE",
+        "title": "INDUSTRY-SPECIFIC",
         "subtitle": "Deep-learning models trained for the unique demands of elite sectors",
         "cards": {
             "real_estate": {
                 "title": "REAL ESTATE",
-                "desc": "AI-driven CRM and market prediction for high-value property assets"
+                "desc": "Next-generation real estate platforms and intelligent asset management"
             },
             "yachts": {
                 "title": "YACHTS",
-                "desc": "Intelligent fleet management and brokerage automation."
+                "desc": "Building intelligent transportation and operations platforms"
             },
             "stocks": {
-                "title": "STOCKS",
-                "desc": "Algorithmic analysis and value investing tools"
+                "title": "FINTECH",
+                "desc": "Modern fintech infrastructure for businesses and digital services"
             },
             "ecommerce": {
-                "title": "E-COMMERCE & RESTAURANTS",
-                "desc": "Predictive supply chain and customer behavior AI"
+                "title": "FMCG",
+                "desc": "Smart commerce and FMCG infrastructure powered by AI"
             }
         }
     },
