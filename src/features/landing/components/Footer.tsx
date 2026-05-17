@@ -7,13 +7,13 @@ import { Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin, ArrowUpRight
 import LanguageToggle from '@/src/features/landing/components/LanguageToggle';
 import { CTA_LINK } from '@/src/shared/constans/data';
 
-const socialLinks = [
+// const socialLinks = [
   // {icon:Facebook, href:'https://www.facebook.com/share/1H3buCCqqF/', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
   // { icon: Linkedin, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
   // { icon: Github, href: '#', color: 'hover:text-white hover:bg-white/10' },
   // { icon: Twitter, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
   // { icon: Instagram, href: '#', color: 'hover:text-amber-400 hover:bg-amber-500/10' },
-];
+// ];
 
 
 
@@ -139,7 +139,7 @@ export default function Footer() {
             
             {/* Social Links */}
             <div className="flex gap-3">
-              {socialLinks.map((social, idx) => (
+              {/* {socialLinks.map((social, idx) => (
                 <motion.a 
                   key={idx} 
                   href={social.href}
@@ -149,7 +149,7 @@ export default function Footer() {
                 >
                   <social.icon size={16} className="md:w-[18px] md:h-[18px]" />
                 </motion.a>
-              ))}
+              ))} */}
             </div>
           </div>
 
@@ -221,11 +221,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="tel:+201090784354" className="flex items-center gap-3 text-gray-400 group hover:text-cyan-400 transition-colors">
+                <a href="tel:+201122882154" className="flex items-center gap-3 text-gray-400 group hover:text-cyan-400 transition-colors">
                   <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/20 group-hover:border-cyan-500/40 transition-all">
                     <Phone size={14} className="md:w-4 md:h-4 text-cyan-400" />
                   </div>
-                  <span className="text-xs md:text-sm">+20 109 078 4354</span>
+                  <span className="text-xs md:text-sm">+20 11 2288 2154</span>
                 </a>
               </li>
             </ul>
