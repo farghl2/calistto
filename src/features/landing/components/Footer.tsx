@@ -8,7 +8,7 @@ import LanguageToggle from '@/src/features/landing/components/LanguageToggle';
 import { CTA_LINK } from '@/src/shared/constans/data';
 
 const socialLinks = [
-  {icon:Facebook, href:'https://www.facebook.com/share/1H3buCCqqF/', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
+  // {icon:Facebook, href:'https://www.facebook.com/share/1H3buCCqqF/', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
   // { icon: Linkedin, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
   // { icon: Github, href: '#', color: 'hover:text-white hover:bg-white/10' },
   // { icon: Twitter, href: '#', color: 'hover:text-cyan-400 hover:bg-cyan-500/10' },
