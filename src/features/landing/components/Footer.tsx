@@ -208,7 +208,7 @@ export default function Footer() {
                   </div>
                   <span className="text-xs md:text-sm leading-relaxed">
                     Alexandria, Egypt<br/>
-                    {/* <span className="text-gray-500">{t('worldwide')}</span> */}
+                    {/* <span className="text-gray-500">{t('worldwide')}</span> */}///
                   </span>
                 </a>
               </li>
